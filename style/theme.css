@@ -1,0 +1,23 @@
+:root {
+    --page-background: rgb(231, 231, 231);
+    --app-background: rgb(247, 247, 247);
+    --head-background: rgb(247, 247, 247);
+    --page-text-color: rgb(14, 14, 14);
+    --title-color: rgb(26, 26, 26);
+}
+
+.light-theme {
+    --page-background: rgb(231, 231, 231);
+    --app-background: rgb(247, 247, 247);
+    --head-background: rgb(247, 247, 247);
+    --page-text-color: rgb(14, 14, 14);
+    --title-color: rgb(26, 26, 26);
+}
+
+.dark-theme {
+    --page-background: rgb(27, 27, 27);
+    --app-background: rgb(17, 17, 17);
+    --head-background: rgb(17, 17, 17);
+    --page-text-color: rgb(247, 247, 247);
+    --title-color: rgb(211, 211, 211);
+}

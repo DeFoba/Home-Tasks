@@ -1,0 +1,145 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--page-background);
+    color: var(--page-text-color);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 3.5vw;
+    transition: 0.3s background-color;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--head-background);
+    height: 13vw;
+    box-shadow: 0 0 0.8vw #000;
+}
+
+.head-title {
+    text-transform: uppercase;
+    font-size: 5vw;
+    color: var(--title-color);
+}
+
+.content {
+    padding: 2vw 1vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.app {
+    transition: 0.1s transform;
+    transition: 0.3s flex-grow;
+    position: relative;
+    width: 19vw;
+    height: 19vw;
+    background: var(--app-background);
+    overflow: hidden;
+    margin: 1vw 2.5vw;
+    box-shadow: 0 0 0.8vw #000;
+    border-radius: 1vw;
+    flex-grow: 0;
+}
+
+.app:hover {
+    transform: scale(0.98);
+}
+
+.app:active {
+    transform: scale(0.96);
+}
+
+.app-image-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0);
+    z-index: 0;
+    transition: 0.3s transform, 0,3s filter, 0,3s background-color;
+}
+
+.modal-block {
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.app-information {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background: var(--page-background);
+    padding: 2vw 3vw;
+    box-shadow: 0 0 0.8vw #000;
+    transform: translate(-50%, -50%) scale(0.6);
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.4s transform;
+}
+
+.app-settings-container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: stretch; */
+    /* flex-wrap: wrap; */
+}
+
+.checkbox-div {
+    display: flex;
+    justify-content: center;
+    padding: 0 3vw;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3vw;
+}
+
+.app-title {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-input {
+    width: 100%;
+}
+
+#Settings {
+    position: absolute;
+    background-color: var(--page-background);
+    right: 0;
+    top: 0;
+    height: 85%;
+    width: 18vw;
+    margin: 1.3vw;
+}

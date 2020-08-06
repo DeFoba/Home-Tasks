@@ -2,10 +2,16 @@
 
 let html = document.getElementsByTagName('html')[0];
 
-if (localStorage.getItem('pageTheme') == 'light-theme') {
-	html.className = 'light-theme';
-} else {
+if (localStorage.getItem('pageTheme') == 'dark-theme') {
 	html.className = 'dark-theme';
+} else {
+	html.className = 'light-theme';
+}
+
+if (localStorage.getItem('pageStyle') == '1') {
+	localStorage.setItem('pageStyle', '1');
+} else {
+	localStorage.setItem('pageStyle', '0');
 }
 
 localStorage.setItem('pageTheme', html.className);
@@ -39,7 +45,14 @@ function createAppElement(place = appContent, name = 'None', task = '', src = ''
 
 function createCheckBoxElement(place = appContent, id = '', title = 'None', task = '', used = false, className = 'settings-checkbox') {
 	let checkbox = document.createElement('input');
-	place.append(checkbox);
+	let checkboxDiv = document.createElement('div');
+
+	place.append(checkboxDiv);
+	checkboxDiv.innerHTML = title;
+	checkboxDiv.prepend(checkbox);
+
+	checkboxDiv.className = 'checkbox-div';
+
 	checkbox.id = id; checkbox.innerHTML = title; checkbox.type = 'checkbox';
 	checkbox.className = className; checkbox.checked = used;
 	checkbox.onchange = task;
@@ -53,7 +66,8 @@ function loadApps() {
 		if (key != 'pageTheme' && key != 'key' &&
 			key != 'getItem' && key != 'setItem' &&
 			key != 'removeItem' && key != 'clear' &&
-			key != 'length') {
+			key != 'length' && key != 'pageStyle' &&
+			key != '' && key != ' ') {
 
 			createAppElement(appContent, key);
 
