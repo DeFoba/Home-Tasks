@@ -27,18 +27,20 @@ document.addEventListener('click', ({target}) => {
 		appInformation.append(appSettingsContainer);
 
 		createAppElement(appSettingsContainer, 'Theme', themeSwich);
-		createAppElement(appSettingsContainer, 'Clear', clearLocalStorage);
 		createAppElement(appSettingsContainer, 'Style', styleChenger);
+		createAppElement(appSettingsContainer, 'Clear', clearLocalStorage);
+		createAppElement(appSettingsContainer, '+', addApp);
 
 		appInformation.append(checkboxList);
 
-		createCheckBoxElement(checkboxList, 'Math', 'Math', onChangeCheckbox, false);
-		createCheckBoxElement(checkboxList, 'Russ', 'Russ', onChangeCheckbox, false);
-		createCheckBoxElement(checkboxList, 'Geog', 'Geog', onChangeCheckbox, false);
+		// createCheckBoxElement(checkboxList, 'Math', 'Math', onChangeCheckbox, false);
+		// createCheckBoxElement(checkboxList, 'Russ', 'Russ', onChangeCheckbox, false);
+		// createCheckBoxElement(checkboxList, 'Geog', 'Geog', onChangeCheckbox, false);
 
 		checkboxList.className = 'checkbox-list';
 		appSettingsContainer.className = 'app-settings-container';
 
+		addAppInput()
 		showModal();
 	}
 	
@@ -52,6 +54,7 @@ document.addEventListener('click', ({target}) => {
 		let toDoInput = document.createElement('input');
 
 		appInformation.append(appTitle);
+		// createAppElement(appInformation, '+', appInputAdd);
 		appInformation.append(toDoInput);
 
 		appTitle.innerHTML = target.parentNode.id;
@@ -72,6 +75,35 @@ document.addEventListener('click', ({target}) => {
 		showModal();
 	}
 });
+
+function addApp() {
+	let appNameValue = appInformation.querySelector('#toDoInput');
+	if (appNameValue != '' && appNameValue != ' ') {
+		localStorage.setItem(appNameValue.value, '');
+	} else return;
+	appNameValue.value = '';
+	appContent.innerHTML = '';
+	loadApps();
+	uploadPageStyle();
+}
+
+function addAppInput() {
+	let appTitle = document.createElement('h1');
+	let toDoInput = document.createElement('input');
+	appInformation.append(appTitle);
+	appInformation.append(toDoInput);
+	appTitle.innerHTML = 'App name:';
+	appTitle.className = 'app-title';
+	toDoInput.id = 'toDoInput';
+	toDoInput.className = 'todo-input';
+}
+
+function appInputAdd() {
+	let toDoInput = document.createElement('input');
+	appInformation.append(toDoInput);
+	toDoInput.id = 'toDoInput';
+	toDoInput.className = 'todo-input';
+}
 
 function clearLocalStorage() {
 	for (let key in localStorage) {

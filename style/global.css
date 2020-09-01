@@ -6,7 +6,7 @@ html, body {
     text-align: center;
     font-family: sans-serif;
     font-size: 3.5vw;
-    transition: 0.3s background-color;
+    transition: var(--change-color-transition) background-color;
 }
 
 .body {
@@ -23,12 +23,14 @@ html, body {
     background: var(--head-background);
     height: 13vw;
     box-shadow: 0 0 0.8vw #000;
+    transition: var(--change-color-transition) background-color;
 }
 
 .head-title {
     text-transform: uppercase;
     font-size: 5vw;
     color: var(--title-color);
+    transition: var(--change-color-transition) background-color;
 }
 
 .content {
@@ -37,11 +39,11 @@ html, body {
     justify-content: flex-start;
     flex-wrap: wrap;
     justify-content: space-around;
+    transition: var(--change-color-transition) background-color;
 }
 
 .app {
-    transition: 0.1s transform;
-    transition: 0.3s flex-grow;
+    transition: 0.1s transform, 0.9s flex-grow, var(--change-color-transition) background-color;
     position: relative;
     width: 19vw;
     height: 19vw;
@@ -77,7 +79,7 @@ html, body {
     height: 100%;
     filter: opacity(0);
     z-index: 0;
-    transition: 0.3s transform, 0,3s filter, 0,3s background-color;
+    transition: 0.3s transform, 0,3s filter, 0,3s background-color, var(--change-color-transition) background-color;
 }
 
 .modal-block {
@@ -99,7 +101,7 @@ html, body {
     transform: translate(-50%, -50%) scale(0.6);
     display: flex;
     flex-wrap: wrap;
-    transition: 0.4s transform;
+    transition: 0.4s transform, var(--change-color-transition) background-color;
 }
 
 .app-settings-container {
@@ -136,10 +138,19 @@ html, body {
 
 #Settings {
     position: absolute;
-    background-color: var(--page-background);
+    background-image: linear-gradient(90deg, rgba(255, 0, 0, 0), var(--settings-gradient));
     right: 0;
     top: 0;
-    height: 85%;
+    /* height: 85%; */
     width: 18vw;
-    margin: 1.3vw;
+    /* margin: 1.3vw; */
+    margin: 0;
+    height: 100%;
+    box-shadow: 0 0 0 0;
+    border-radius: 0;
+    transition: 0.3s filter;
+}
+
+#Settings:hover {
+    filter: opacity(0.7);
 }

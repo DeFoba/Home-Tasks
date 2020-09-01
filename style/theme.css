@@ -4,6 +4,8 @@
     --head-background: rgb(247, 247, 247);
     --page-text-color: rgb(14, 14, 14);
     --title-color: rgb(26, 26, 26);
+    --settings-gradient: rgb(179, 179, 179);
+    --change-color-transition: 0.3s;
 }
 
 .light-theme {
@@ -12,6 +14,7 @@
     --head-background: rgb(247, 247, 247);
     --page-text-color: rgb(14, 14, 14);
     --title-color: rgb(26, 26, 26);
+    --settings-gradient: rgb(179, 179, 179);
 }
 
 .dark-theme {
@@ -20,4 +23,5 @@
     --head-background: rgb(17, 17, 17);
     --page-text-color: rgb(247, 247, 247);
     --title-color: rgb(211, 211, 211);
+    --settings-gradient: rgb(49, 49, 49);
 }

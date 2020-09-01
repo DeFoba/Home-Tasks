@@ -67,7 +67,7 @@ function loadApps() {
 			key != 'getItem' && key != 'setItem' &&
 			key != 'removeItem' && key != 'clear' &&
 			key != 'length' && key != 'pageStyle' &&
-			key != '' && key != ' ') {
+			key != '' && key != ' ' && key != '+') {
 
 			createAppElement(appContent, key);
 
